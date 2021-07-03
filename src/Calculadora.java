@@ -15,24 +15,20 @@ public class Calculadora {
 		double clientesCompartilhamACada20Cliques = 0;
 		double novasVisualizacoesPorCompartilhamento = 0;
 		double cliquesPosNovosCompartilhamentos = 0;
-		double novosCompartilhamentos = 0;
 		double totalVisualizacoes = 0;
 
-		clientesVisualizamAnuncioOriginal = valorInvestido * 30; 
-		clientesClicamACada100Visualizacoes = clientesVisualizamAnuncioOriginal * 0.12; 
-		clientesCompartilhamACada20Cliques = clientesClicamACada100Visualizacoes * 0.15; 
-		novasVisualizacoesPorCompartilhamento = clientesCompartilhamACada20Cliques * 40; 
-		
-		
+		clientesVisualizamAnuncioOriginal = valorInvestido * 30;
+		clientesClicamACada100Visualizacoes = Math.round(clientesVisualizamAnuncioOriginal * 0.12);
+		clientesCompartilhamACada20Cliques = Math.round(clientesClicamACada100Visualizacoes * 0.15);
+		novasVisualizacoesPorCompartilhamento = clientesCompartilhamACada20Cliques * 40;
+
 		for (int i = 1; i < 4; i++) {
 			for (int c = 0; c < clientesCompartilhamACada20Cliques; c++) {
 				novasVisualizacoesPorCompartilhamento = novasVisualizacoesPorCompartilhamento + 40;
-				cliquesPosNovosCompartilhamentos = novasVisualizacoesPorCompartilhamento * 0.12;
-				novosCompartilhamentos = cliquesPosNovosCompartilhamentos * 0.15;
+				cliquesPosNovosCompartilhamentos = Math.round(novasVisualizacoesPorCompartilhamento * 0.12);
 			}
 
-		}		
-	
+		}
 
 		totalVisualizacoes = novasVisualizacoesPorCompartilhamento + clientesVisualizamAnuncioOriginal;
 
@@ -40,4 +36,5 @@ public class Calculadora {
 				+ totalVisualizacoes + " visualizações");
 
 	}
+
 }
